@@ -12,7 +12,7 @@ items = ["alpha", "beta", "gamma", "delta", "epsilon"]
 if task_id < len(items):
     item = items[task_id]
     print(f"[Task {task_id}] Processing item: {item}")
-    time.sleep(600)  # Simulate work
+    time.sleep(60)  # Simulate work
     print(f"[Task {task_id}] Done.")
 else:
     print(f"[Task {task_id}] No task defined for this index.")
