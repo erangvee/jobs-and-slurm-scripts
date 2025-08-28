@@ -1,0 +1,31 @@
+# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Custom output/log/error directories
+/output/
+/logs/
+/error/
+#error/   # if you literally mean a folder named "error"
+#error.log  # uncomment if you mean a single error log file
+
+# OS files
+.DS_Store
+Thumbs.db
