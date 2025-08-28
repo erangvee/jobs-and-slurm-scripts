@@ -13,8 +13,13 @@
 
 mkdir -p ./output
 
-spack env activate /scratch/user.test/spack/spack_env
+USER=$(whoami)
+SPACK_ENV=your_spack_env
+CONDA_ENV=your_conda_env
+
+spack env activate /scratch/$USER/spack/$SPACK_ENV
 spack load miniconda3
 
-source activate conda_env
+source activate $CONDA_ENV
+
 python job_array.py ${SLURM_ARRAY_TASK_ID}
