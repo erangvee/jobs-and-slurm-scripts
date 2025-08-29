@@ -28,6 +28,6 @@ source activate $CONDA_ENV
 JPORT=$(shuf -i 8400-8500 -n 1)
 
 echo "JupyterLab starting on port $JPORT"
-echo "Access via: ssh -N -L localhost:$JPORT:$NODE:$JPORT $USER@LOGIN_IP -vvv"
+echo "Access via: ssh -N -L localhost:$JPORT:$NODE:$JPORT $USER@$LOGIN_IP -vvv"
 
 jupyter lab --no-browser --ip=$NODE --port=$JPORT --NotebookApp.token='your_custom_token_here'
