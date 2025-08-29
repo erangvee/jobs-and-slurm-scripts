@@ -14,6 +14,7 @@
 
 mkdir -p ./output
 
+LOGIN_IP=$(hostname -I | awk '{print $1}')
 NODE=$(scontrol show hostnames $SLURM_NODELIST | head -n1)
 USER=$(whoami)
 SPACK_ENV=your_spack_env
@@ -27,6 +28,6 @@ source activate $CONDA_ENV
 JPORT=$(shuf -i 8400-8500 -n 1)
 
 echo "JupyterLab starting on port $JPORT"
-echo "Access via: ssh -N -L localhost:$JPORT:$NODE:$JPORT $USER@10.10.1.1 -vvv"
+echo "Access via: ssh -N -L localhost:$JPORT:$NODE:$JPORT $USER@LOGIN_IP -vvv"
 
 jupyter lab --no-browser --ip=$NODE --port=$JPORT --NotebookApp.token='your_custom_token_here'
